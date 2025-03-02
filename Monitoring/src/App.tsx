@@ -1,4 +1,3 @@
-//import HeaderTxt from "./Components/HeaderTxt";
 import HeaderTxt from "./Components/HeaderTxt";
 import NavButton from "./Components/NavButton";
 
