@@ -1,6 +1,6 @@
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { List } from "lucide-react";
-import "..Navbutton.css";
+import "../Design/Navbutton.css";
 
 const NavButton = () => {
   return (
