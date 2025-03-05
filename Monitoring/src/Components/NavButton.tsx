@@ -1,17 +1,18 @@
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { List } from "lucide-react";
 import "../Design/Navbutton.css";
+import seeds from "../assets/seedling.svg";
 
 const NavButton = () => {
   return (
-    <div>
+    <div className="navigation">
       <Navbar expand="lg" className="bg-light shadow-sm">
         <Container>
           {/* Left Side - Dropdown */}
           <Nav className="me-auto">
+            <img src={seeds} alt="seeds" className="seeds" />
             <NavDropdown
               title={<List size={24} />}
-              id="basic-nav-dropdown"
               className="border-0 bg-transparent"
             >
               <NavDropdown.Item href="/Homepage">Homepage</NavDropdown.Item>

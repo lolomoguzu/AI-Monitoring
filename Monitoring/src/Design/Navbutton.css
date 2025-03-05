@@ -1,40 +1,35 @@
-/* Style for the Navbar */
-.navbar {
-    background-color: #ffffff !important; /* Light background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  .navigation{
+    padding: 20px;
+    opacity: 100%;
   }
-  
-  /* Style for the dropdown button */
-  .navbar .dropdown-toggle {
-    border: none !important;
-    background: transparent !important;
-    font-size: 18px;
-  }
-  
-  /* Remove default focus outline */
-  .navbar .dropdown-toggle:focus {
-    outline: none !important;
-    box-shadow: none !important;
-  }
-  
-  /* Style for the dropdown menu */
-  .navbar .dropdown-menu {
+  .navbar.dropdown-menu {
     border-radius: 8px;
     border: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   /* Style for dropdown items */
-  .navbar .dropdown-item {
+  .navbar.dropdown-item {
     padding: 10px 20px;
     font-size: 16px;
     color: #000000;
     transition: background 0.3s ease;
   }
-  
-  /* Hover effect */
   .navbar .dropdown-item:hover {
     background-color: #3eb038;
     color: #000;
   }
-  
+ .seeds{
+  height: 40px; /* Adjust as needed */
+  margin-right: 10px;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
