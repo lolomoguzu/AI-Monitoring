@@ -1,28 +1,25 @@
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
-import { List } from "lucide-react";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import "../Design/Navbutton.css";
 import seeds from "../assets/seedling.svg";
 
 const NavButton = () => {
   return (
-    <div className="navigation">
-      <Navbar expand="lg" className="bg-light shadow-sm">
-        <Container>
-          {/* Left Side - Dropdown */}
-          <Nav className="me-auto">
-            <img src={seeds} alt="seeds" className="seeds" />
-            <NavDropdown
-              title={<List size={24} />}
-              className="border-0 bg-transparent"
-            >
-              <NavDropdown.Item href="/Homepage">Homepage</NavDropdown.Item>
-              <NavDropdown.Item href="/Dashboard">Dashboard</NavDropdown.Item>
-              <NavDropdown.Item href="/About">About</NavDropdown.Item>
-            </NavDropdown>
+    <Navbar expand="lg" bg="light" variant="light">
+      <Container>
+        {/* Left Side - Dropdown */}
+        <Nav>
+          <img src={seeds} alt="seeds" width="40" />
+        </Nav>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link href="/">Homepage</Nav.Link>
+            <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
           </Nav>
-        </Container>
-      </Navbar>
-    </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 

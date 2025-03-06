@@ -1,60 +1,39 @@
-.Title{
-    text-align: center;
-    color: rgb(8, 139, 45);
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
 .about-text{
-    padding-bottom: 32px;
-    padding:30px;
-    margin: 50px;
-    font-size:19px;
-    text-align: justify;
-    background-color: rgb(222, 244, 244);
-    border-radius: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 35px;
+  background: #eef1f1;
 }
-.Hydrophonic {
-  display: flex;
-  padding-bottom: 32px;
-  padding-left: 48px;
-  padding-right: 48px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-   
-}
-.Photo {
-   align-items: left;
-    margin: 0 auto;
+
+.img-fluid {
+  width: 100%;
   height: auto;
-     max-width: 500px;
-    border-radius: 15px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.Name {
-  padding-top: 50px;
-  padding-right: 100px;
-  font-size:19px;
-  padding-left: 70px;
-  margin-left: 30px;
-  text-align: justify;
-  background-color: rgb(222, 244, 244);
-  border-radius: 15px;
+.info-text {
+  background:#eef1f1;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 32.5px;
 }
 
-
-.about-container {
-    animation: fadeIn 1.5s ease-out forwards;
-  }
-  .Photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
   }
 
-  @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  .info-text {
+    font-size: 20px;
+    text-align: justify;
+  }
+  .about-text{
+    font-size: 20px;
+    text-align: justify;
+  }
 }
