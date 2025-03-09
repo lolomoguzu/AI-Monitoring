@@ -1,0 +1,41 @@
+/* Center the heading */
+.dashboard-title {
+  text-align: center;
+}
+
+.dashboard-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Tooltip container */
+.custom-tooltip {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* PH Level text colors */
+.ph-red {
+  color: #ff0000;
+  color: getBarColor(phValue as number);
+}
+
+.ph-yellow {
+  color: #ffff00;
+}
+
+.ph-green {
+  color: #008000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
