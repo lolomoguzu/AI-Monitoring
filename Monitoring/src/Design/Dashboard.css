@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* Center the heading */
 .dashboard-title {
   text-align: center;
@@ -39,3 +40,36 @@
     align-items: center;
   }
 }
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+  
+    .info-text {
+      font-size: 20px;
+      text-align: justify;
+    }
+    .about-text{
+      font-size: 20px;
+      text-align: justify;
+    }
+  }
+>>>>>>> Stashed changes
