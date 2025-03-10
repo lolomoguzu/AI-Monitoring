@@ -11,8 +11,8 @@
 .about-text{
   padding: 20px;
   border-radius: 10px;
-  font-size: 20px;
-  background: #eef1f1;
+  font-size: 25px;
+  background:hsl(180, 10%, 94%);
   margin-bottom: 60px;
 }
 
@@ -25,7 +25,7 @@
   background:hsl(180, 10%, 94%);
   padding: 20px;
   border-radius: 10px;
-  font-size: 32.5px;
+  font-size: 25px;
 }
 
 /* Responsive Adjustments */

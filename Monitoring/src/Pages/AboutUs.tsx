@@ -10,19 +10,21 @@ const AboutUs = () => {
       <NavButton />
 
       <div className="about-container">
-        <h1 className="Title text-center my-2">About Us</h1>
-        <p className="about-text">
-          Welcome to Hydrophonic research team, where technology meets
-          sustainable farming! We specialize in designing and developing
-          professional websites for hydroponic businesses, farmers, and urban
-          gardeners. Our goal is to help you showcase your innovative farming
-          techniques, products, and services through a modern, user-friendly,
-          and visually stunning website. With expertise in web development, SEO,
-          and digital marketing, we ensure your online presence stands out,
-          attracts customers, and grows your business. Whether you need an
-          e-commerce platform, an informational blog, or a custom-built website,
-          we’ve got you covered.
-        </p>
+        <h1 className="text-center my-2">About Us</h1>
+        <div>
+          <p className="about-text">
+            Welcome to Hydrophonic research team, where technology meets
+            sustainable farming! We specialize in designing and developing
+            professional websites for hydroponic businesses, farmers, and urban
+            gardeners. Our goal is to help you showcase your innovative farming
+            techniques, products, and services through a modern, user-friendly,
+            and visually stunning website. With expertise in web development,
+            SEO, and digital marketing, we ensure your online presence stands
+            out, attracts customers, and grows your business. Whether you need
+            an e-commerce platform, an informational blog, or a custom-built
+            website, we’ve got you covered.
+          </p>
+        </div>
 
         <div className="row align-items-center">
           {/* Left Side: Carousel */}
@@ -47,8 +49,8 @@ const AboutUs = () => {
 
           {/* Right Side: Text Content */}
           <div className="col-lg-6 col-md-12">
+            <h1 className="font center">Research Team</h1>
             <p className="info-text">
-              <h1 className="font center">Research Team</h1>
               Over the last few years, hydroponic cultivation has emerged as an
               efficient and sustainable approach to crop production, especially
               in controlled environment conditions like air-vent greenhouses...
@@ -61,7 +63,7 @@ const AboutUs = () => {
         <p className="footer-text">Please Message Us:</p>
         <p className="footer-text2">
           You can visit Naga College Foundation-Agri-Technopreneurship Center,
-          Brgy. Pacol, Lungsod ng Naga, Philippines
+          Brgy. Pacol, Naga City, Philippines
         </p>
       </footer>
     </div>
