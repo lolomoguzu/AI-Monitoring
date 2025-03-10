@@ -8,6 +8,7 @@ const AboutUs = () => {
   return (
     <div>
       <NavButton />
+
       <div className="about-container">
         <h1 className="Title text-center my-2">About Us</h1>
         <p className="about-text">
@@ -25,7 +26,7 @@ const AboutUs = () => {
 
         <div className="row align-items-center">
           {/* Left Side: Carousel */}
-          <div className="col-lg-6 col-md-12 mb-4">
+          <div className="carousel col-lg-6 col-md-12 mb-4">
             <Carousel>
               <Carousel.Item>
                 <img
@@ -54,10 +55,15 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
-
-        {/* Footer */}
-        <footer className="text-center mt-4">Please Message Us:</footer>
       </div>
+      {/* Footer */}
+      <footer className="contact-section">
+        <p className="footer-text">Please Message Us:</p>
+        <p className="footer-text2">
+          You can visit Naga College Foundation-Agri-Technopreneurship Center,
+          Brgy. Pacol, Lungsod ng Naga, Philippines
+        </p>
+      </footer>
     </div>
   );
 };

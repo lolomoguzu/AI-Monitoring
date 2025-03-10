@@ -1,3 +1,8 @@
+
+
+
+
+
 .about-container {
   max-width: 1200px;
   margin: auto;
@@ -6,8 +11,9 @@
 .about-text{
   padding: 20px;
   border-radius: 10px;
-  font-size: 35px;
+  font-size: 20px;
   background: #eef1f1;
+  margin-bottom: 60px;
 }
 
 .img-fluid {
@@ -16,7 +22,7 @@
 }
 
 .info-text {
-  background:#eef1f1;
+  background:hsl(180, 10%, 94%);
   padding: 20px;
   border-radius: 10px;
   font-size: 32.5px;
@@ -36,4 +42,25 @@
     font-size: 20px;
     text-align: justify;
   }
+}
+
+.contact-section{
+  background-image:  linear-gradient(to top, rgb(230, 245, 221), rgba(192, 2, 2, 0)), url('../assets/footer img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  text-align: center;
+  color: white;
+  padding: 100px 20px; /* Adds spacing */
+  font-family: 'Arial', sans-serif;
+}
+.footer-text{
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(105, 98, 98, 0.6); /* Adds readability */
+}
+.footer-text2{
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
 }
