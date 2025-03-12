@@ -9,17 +9,17 @@ import ErrorElement from "./Components/ErrorElement.tsx";
 
 const router = createBrowserRouter([
   {
-    path: "/Dashboard",
+    path: "/dashboard",
     element: <Dashboard />,
     errorElement: <ErrorElement />,
   },
   {
-    path: "/Homepage",
+    path: "/homepage",
     element: <Homepage />,
     errorElement: <ErrorElement />,
   },
   {
-    path: "/About",
+    path: "/about",
     element: <AboutUs />,
 
     errorElement: <ErrorElement />,

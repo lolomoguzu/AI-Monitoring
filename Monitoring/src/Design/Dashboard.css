@@ -1,5 +1,9 @@
 
-/* Center the heading */
+.dashboard-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 .dashboard-title {
   text-align: center;
 }

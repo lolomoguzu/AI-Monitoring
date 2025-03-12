@@ -1,30 +1,33 @@
 import NavButton from "../Components/NavButton";
+import SideBar from "../Components/Sidebar";
 import "../Design/Dashboard.css";
 import Waterlevel from "../SensorComponents/Waterlevel";
-import Temperature from "../SensorComponents/Temperature";
 import PlantNutrients from "../SensorComponents/PlantNutrients";
-import Phlevel from "../SensorComponents/Phlevel";
+import SoilSensor from "../SensorComponents/SoilSensor";
+import React from "react";
 
 const Dashboard: React.FC = () => {
   return (
     <div>
+      <NavButton />
       <div>
-        <NavButton />
+        <h1 className="dashboard-title">DASHBOARD PREVIEW</h1>
       </div>
-      <h1 className="dashboard-title">DASHBOARD PREVIEW</h1>
-      <div className="dashboard-grid">
-        {/* Water Level */}
-        <div className="mt-4 p-3 bg-white rounded shadow">
-          <Waterlevel />
+      <div>
+        <div className="dashboard-container">
+          {/*Soil Moisture */}
+          <div className="mt-4 p-3 w-2 bg-white rounded shadow">
+            <SoilSensor />
+          </div>
+          {/* Water Level */}
+          <div className="mt-4 p-3 w-2 bg-white rounded shadow">
+            <Waterlevel />
+          </div>
         </div>
         {/* Temperature */}
-        <div className="mt-4 p-3 bg-white rounded shadow">
-          <Temperature />
-        </div>
+
         {/* PH Level */}
-        <div className="mt-4 p-3 bg-white rounded shadow">
-          <Phlevel />
-        </div>
+
         {/* {Pie Chart} */}
         <div className="mt-4 p-3 bg-white rounded shadow">
           <PlantNutrients />

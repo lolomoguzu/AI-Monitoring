@@ -1,7 +1,5 @@
-
-
 const Temperature = () => {
-  return <div>Temperature</div>;
+  return <div></div>;
 };
 
 export default Temperature;
