@@ -21,6 +21,9 @@ const SoilSensor = () => {
             fontSize: 30,
             transform: "translate(0px, 0px)",
           },
+          [`& .${gaugeClasses.valueArc}`]: {
+            stroke: "#050505",
+          },
         }}
         text={({ value }) => `${value}%`}
       />
