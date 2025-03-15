@@ -1,0 +1,18 @@
+.temperature{
+    margin-top: 1rem; /* mt-3 */
+    padding: 1rem; /* p-3 */
+    background-color: white; /* bg-white */
+    border-radius: 30px; /* rounded */
+    box-shadow:  0 0.3rem 0.40rem rgba(0, 0, 0, 0.5); /* shadow */
+  
+}
+
+
+.text-buttom{
+    display: flex;
+          justify-content: space-between;
+          font-size: 35px;
+          color: "#aaa";
+          padding-right: 10px;
+          text-align: center;
+}

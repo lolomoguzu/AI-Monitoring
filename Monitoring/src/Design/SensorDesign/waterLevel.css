@@ -1,0 +1,40 @@
+.water-level {
+    width: 100%;   /* Adjusts dynamically */
+    min-width: 300px;  /* Ensures it doesn't shrink too much */
+    height: 400px; 
+    background-color: white; /* bg-white */
+    border-radius: 30px; /* rounded */
+    box-shadow: 0 0.3rem 0.40rem rgba(0, 0, 0, 0.5); /* shadow */
+    margin: auto; /* Centers the container */
+    padding: 20px;
+  
+}
+
+
+@media (max-width: 768px) {
+    @media (max-width: 768px) {
+        .water-level {
+            height: 300px; /* Reduce height for smaller screens */
+            border-radius: 20px; 
+            padding: 15px;
+        }
+    }
+    
+}
+
+/* Small screens (mobile) */
+@media (max-width: 480px) {
+    @media (max-width: 480px) {
+        .water-level {
+            height: 250px; /* Reduce height for mobile */
+            border-radius: 15px; 
+            padding: 10px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .water-level {
+        width: 1200px;
+    }
+}

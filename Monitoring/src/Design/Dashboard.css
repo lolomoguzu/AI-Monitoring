@@ -1,19 +1,13 @@
-
-.dashboard-container {
-  align-items: center;
-  gap: 20px;
+.ST{
+ align-items: right;
 }
-.dashboard-title {
-  text-align: center;
+.row1{
+  display: flex;
+ padding-top: 10px;
+ padding-left: 50px;
+ padding-right: 50px;
+gap: 10px;
 }
-.dashboard-grid {
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-
-
 
 
 /* Responsive Design */
@@ -25,4 +19,9 @@
   .dashboard-container{
     align-items: center;
   }
+
+  .row1{
+
+  }
+  
 }
