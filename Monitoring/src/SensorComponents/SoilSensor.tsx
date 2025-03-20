@@ -11,8 +11,8 @@ const SoilSensor = () => {
 
         <div className="position-relative d-inline-block">
           <Gauge
-            width={300}
-            height={200}
+            width={200}
+            height={140}
             value={soil_data}
             startAngle={-110}
             endAngle={110}
@@ -30,7 +30,7 @@ const SoilSensor = () => {
             }}
             text={({ value }) => `${value}%`}
           />
-          <div className="text-buttom">
+          <div className="text-buttom-soil">
             <span>1</span>
             <span>100</span>
           </div>

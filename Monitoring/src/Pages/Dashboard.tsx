@@ -1,4 +1,3 @@
-import React from "react";
 import NavButton from "../Components/NavButton";
 import "../Design/Dashboard.css";
 import Waterlevel from "../SensorComponents/Waterlevel";
@@ -10,13 +9,13 @@ import Temperature from "../SensorComponents/Temperature";
 
 const Dashboard: React.FC = () => {
   return (
-    <div>
+    <div className="background">
       {/* Navigation Button */}
       <NavButton />
 
       {/* Dashboard Header */}
       <div className="d-flex justify-content-between align-items-center mt-3 p-3 rounded shadow bg-white">
-        <h1 className="mb-0">DASHBOARD PREVIEW</h1>
+        <h1>DASHBOARD PREVIEW</h1>
         <button className="btn btn-light p-2 border rounded shadow-sm">
           <ArrowRepeat size={30} />
         </button>
@@ -31,21 +30,19 @@ const Dashboard: React.FC = () => {
         <div>
           <Waterlevel />
         </div>
-        <div className="ST">
+        <div className="soil-temp">
           <SoilSensor />
           <Temperature />
         </div>
       </div>
 
       {/* Plants Preview */}
-      <div className="mt-4">
-        <PlantsPreview />
-      </div>
+
+      <PlantsPreview />
 
       {/* Plant Nutrients Chart */}
-      <div className="mt-4 p-3 bg-white rounded shadow">
-        <PlantNutrients />
-      </div>
+
+      <PlantNutrients />
     </div>
   );
 };

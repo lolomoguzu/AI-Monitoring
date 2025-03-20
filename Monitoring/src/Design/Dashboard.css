@@ -1,12 +1,24 @@
-.ST{
- align-items: right;
+.background {
+    background: linear-gradient(to bottom, #f8fceb, #e3f2d4);
+    min-height: 100vh;
+  
+}
+
+.soil-temp{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  
 }
 .row1{
+  height: 640px;
+  align-items: center;
+  justify-content: center;  
   display: flex;
- padding-top: 10px;
- padding-left: 50px;
- padding-right: 50px;
-gap: 10px;
+  padding-top: 10px;
+gap: 20px;
+
 }
 
 
@@ -18,10 +30,6 @@ gap: 10px;
   }
   .dashboard-container{
     align-items: center;
-  }
-
-  .row1{
-
   }
   
 }

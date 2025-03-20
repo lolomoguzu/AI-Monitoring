@@ -1,14 +1,17 @@
 .water-level {
     width: 100%;   /* Adjusts dynamically */
     min-width: 300px;  /* Ensures it doesn't shrink too much */
-    height: 400px; 
+    height: 540px; 
     background-color: white; /* bg-white */
     border-radius: 30px; /* rounded */
     box-shadow: 0 0.3rem 0.40rem rgba(0, 0, 0, 0.5); /* shadow */
     margin: auto; /* Centers the container */
     padding: 20px;
-  
+    align-items: center;
+    justify-content: center;
+
 }
+
 
 
 @media (max-width: 768px) {

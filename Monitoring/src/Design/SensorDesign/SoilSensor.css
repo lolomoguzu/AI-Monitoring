@@ -1,16 +1,15 @@
 
 
-.text-buttom{
-    text-align: center;
-          justify-content: space-between;
-          font-size: 35px;
+.text-buttom-soil{
+    display: flex;
+    justify-content: space-between;
+          font-size: 25px;
           color: "#aaa";
-          padding-right: 10px;
-          
-          
+
 }
+          
+
 .soil-moisture{
-    margin-top: 1rem; /* mt-3 */
     padding: 1rem; /* p-3 */
     background-color: white; /* bg-white */
     border-radius: 30px; /* rounded */

@@ -1,108 +1,154 @@
-const PowerPlantTable: React.FC = () => {
-  const data = [
-    {
-      location: "Brightfalcon",
-      turbine: "DWT",
-      actual: "11,981 kW",
-      expected: "12,027 kW",
-      production: "100%",
-      status: "Available",
-    },
-    {
-      location: "Brightfalcon",
-      turbine: "HWT",
-      actual: "20,528 kW",
-      expected: "26,061 kW",
-      production: "78.77%",
-      status: "Available",
-    },
-    {
-      location: "Brookden",
-      turbine: "DWT",
-      actual: "11,643 kW",
-      expected: "12,648 kW",
-      production: "92%",
-      status: "Offline",
-    },
-    {
-      location: "Brookden",
-      turbine: "HAWT",
-      actual: "6,603 kW",
-      expected: "6,950 kW",
-      production: "95.01%",
-      status: "Available",
-    },
-    {
-      location: "Coldsilver",
-      turbine: "DWT",
-      actual: "12,005 kW",
-      expected: "12,833 kW",
-      production: "93.5%",
-      status: "Available",
-    },
-    {
-      location: "Coldsilver",
-      turbine: "SWT",
-      actual: "11,956 kW",
-      expected: "12,380 kW",
-      production: "96.8%",
-      status: "Available",
-    },
-    {
-      location: "Crystalmont",
-      turbine: "HAWT",
-      actual: "6,121 kW",
-      expected: "6,178 kW",
-      production: "99.6%",
-      status: "Available",
-    },
-  ];
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Chip,
+  Tooltip,
+} from "@mui/material";
 
+// Define the type for a hydroponic plant entry
+interface HydroponicPlant {
+  name: string;
+  nutrientLevel: string;
+  waterPH: string;
+  growthRate: string;
+  healthStatus: string;
+  aiRecommendation: string;
+}
+
+// Sample data with AI recommendations
+const hydroponicPlants: HydroponicPlant[] = [
+  {
+    name: "Plants 1",
+    nutrientLevel: "Optimal",
+    waterPH: "6.2",
+    growthRate: "Fast",
+    healthStatus: "Healthy",
+    aiRecommendation: "Maintain nutrient balance",
+  },
+  {
+    name: "Plants 2",
+    nutrientLevel: "Low",
+    waterPH: "5.8",
+    growthRate: "Moderate",
+    healthStatus: "Needs Attention",
+    aiRecommendation: "Increase nutrient supply",
+  },
+  {
+    name: "Plants 3",
+    nutrientLevel: "High",
+    waterPH: "7.0",
+    growthRate: "Slow",
+    healthStatus: "Overfed",
+    aiRecommendation: "Reduce nutrient concentration",
+  },
+  {
+    name: "Plants 4",
+    nutrientLevel: "Optimal",
+    waterPH: "6.5",
+    growthRate: "Fast",
+    healthStatus: "Healthy",
+    aiRecommendation: "Good conditions, keep monitoring",
+  },
+  {
+    name: "Plants 5",
+    nutrientLevel: "Medium",
+    waterPH: "6.0",
+    growthRate: "Steady",
+    healthStatus: "Stable",
+    aiRecommendation: "Maintain current conditions",
+  },
+  {
+    name: "Plants 6",
+    nutrientLevel: "Medium",
+    waterPH: "6.0",
+    growthRate: "Steady",
+    healthStatus: "Stable",
+    aiRecommendation: "Maintain current conditions",
+  },
+];
+
+const HydroponicTable: React.FC = () => {
   return (
-    <div className="container mt-4">
-      <h5 className="fw-bold">
-        Plants Details <span className="text-secondary">&#x24D8;</span>
-      </h5>
-      <div className="table-responsive">
-        <table className="table table-bordered text-center">
-          <thead>
-            <tr className="table-primary">
-              <th>Location</th>
-              <th>Nutrients</th>
-              <th>Actual Output</th>
-              <th>Expected Output</th>
-              <th>Production Rate</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((row, index) => (
-              <tr key={index}>
-                <td className={row.status === "Offline" ? "text-danger" : ""}>
-                  {row.location}
-                </td>
-                <td>{row.turbine}</td>
-                <td>{row.actual}</td>
-                <td>{row.expected}</td>
-                <td>
-                  <span className="badge bg-success text-white p-2">
-                    {row.production}
-                  </span>
-                </td>
-                <td
-                  className={
-                    row.status === "Offline" ? "text-danger" : "text-success"
-                  }
-                >
-                  {row.status}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <TableContainer
+      component={Paper}
+      sx={{ backgroundColor: "#e8f5e9", borderRadius: 2, padding: 2 }}
+    >
+      <Table>
+        {/* Table Header */}
+        <TableHead>
+          <TableRow sx={{ backgroundColor: "#a5d6a7" }}>
+            <TableCell>
+              <b>Letuce</b>
+            </TableCell>
+            <TableCell>
+              <b>Nutrient Level</b>
+            </TableCell>
+            <TableCell>
+              <b>Water pH</b>
+            </TableCell>
+            <TableCell>
+              <b>Growth Rate</b>
+            </TableCell>
+            <TableCell>
+              <b>Health Status</b>
+            </TableCell>
+            <TableCell>
+              <b>AI Recommendation</b>
+            </TableCell>
+          </TableRow>
+        </TableHead>
+
+        {/* Table Body */}
+        <TableBody>
+          {hydroponicPlants.map((plant, index) => (
+            <TableRow key={index}>
+              <TableCell>{plant.name}</TableCell>
+              <TableCell>
+                <Chip
+                  label={plant.nutrientLevel}
+                  sx={{
+                    backgroundColor:
+                      plant.nutrientLevel === "Low"
+                        ? "#ffcc00"
+                        : plant.nutrientLevel === "High"
+                        ? "#e74c3c"
+                        : "#2ecc71",
+                    color: "white",
+                  }}
+                />
+              </TableCell>
+              <TableCell>{plant.waterPH}</TableCell>
+              <TableCell>{plant.growthRate}</TableCell>
+              <TableCell>
+                <Chip
+                  label={plant.healthStatus}
+                  sx={{
+                    backgroundColor:
+                      plant.healthStatus === "Needs Attention"
+                        ? "#ff9800"
+                        : plant.healthStatus === "Overfed"
+                        ? "#e74c3c"
+                        : "#2ecc71",
+                    color: "white",
+                  }}
+                />
+              </TableCell>
+              <TableCell>
+                <Tooltip title="AI-Based Recommendation">
+                  <span>{plant.aiRecommendation}</span>
+                </Tooltip>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };
 
-export default PowerPlantTable;
+export default HydroponicTable;

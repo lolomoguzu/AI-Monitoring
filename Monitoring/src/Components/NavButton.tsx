@@ -5,7 +5,7 @@ import seeds from "../assets/seedling.svg";
 const NavButton = () => {
   return (
     <div className="font">
-      <Navbar expand="lg" bg="light" variant="light">
+      <Navbar expand="lg" bg="mt-3 p-3 rounded shadow bg-white" variant="light">
         <Container>
           {/* Left Side - Dropdown */}
           <Nav>
