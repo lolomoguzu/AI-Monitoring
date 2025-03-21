@@ -1,13 +1,13 @@
 import { gaugeClasses } from "@mui/x-charts/Gauge";
 import { Gauge } from "@mui/x-charts";
-import "../Design/SensorDesign/SoilSensor.css";
+import "../Design/SensorDesign/Humidity.css";
 let soil_data = 30;
 
 const SoilSensor = () => {
   return (
     <div className="soil-moisture">
       <div className="text-center mt-4">
-        <h5>Soil Moisture</h5>
+        <h5>Humidity</h5>
 
         <div className="position-relative d-inline-block">
           <Gauge

@@ -2,11 +2,11 @@ import NavButton from "../Components/NavButton";
 import "../Design/Dashboard.css";
 import Waterlevel from "../SensorComponents/Waterlevel";
 import PlantNutrients from "../SensorComponents/PlantNutrients";
-import SoilSensor from "../SensorComponents/SoilSensor";
+import SoilSensor from "../SensorComponents/Humidity";
 import PlantsPreview from "../SensorComponents/Plants";
 import { ArrowRepeat } from "react-bootstrap-icons";
 import Temperature from "../SensorComponents/Temperature";
-
+import LightSensor from "../SensorComponents/Light";
 const Dashboard: React.FC = () => {
   return (
     <div className="background">
@@ -39,7 +39,7 @@ const Dashboard: React.FC = () => {
       {/* Plants Preview */}
 
       <PlantsPreview />
-
+      <LightSensor wavelengths={[]} intensities={[]} />
       {/* Plant Nutrients Chart */}
 
       <PlantNutrients />
