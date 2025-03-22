@@ -39,7 +39,7 @@ const Dashboard: React.FC = () => {
       {/* Plants Preview */}
 
       <PlantsPreview />
-      <LightSensor wavelengths={[]} intensities={[]} />
+      <LightSensor />
       {/* Plant Nutrients Chart */}
 
       <PlantNutrients />
