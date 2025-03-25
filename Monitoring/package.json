@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "auto-start": "vite",
+    "auto-start": "dev",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -17,6 +17,7 @@
     "@mui/material": "^6.4.7",
     "@mui/x-charts": "^7.27.1",
     "@types/chart.js": "^2.9.41",
+    "axios": "^1.8.4",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.8",
     "lucide-react": "^0.477.0",

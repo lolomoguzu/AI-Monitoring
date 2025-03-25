@@ -9,20 +9,36 @@ import {
   ResponsiveContainer,
   Label,
 } from "recharts";
-
-let data = [
-  { Water: 10 },
-  { Water: 100 },
-  { Water: 5 },
-  { Water: 70 },
-  { Water: 20 },
-  { Water: 100 },
-  { Water: 50 },
-];
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 // Custom Tooltip Component
 
 const Waterlevel: React.FC = () => {
+  const [data, setData] = useState<{ time: string; Water: number }[]>([]);
+
+  // Fetch data from FastAPI
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/water-level");
+        const newData = {
+          time: new Date().toLocaleTimeString(),
+          Water: response.data.Water,
+        };
+
+        setData((prevData) => [...prevData.slice(-10), newData]);
+      } catch (error) {
+        console.error("Error fetching water level data:", error);
+      }
+    };
+
+    fetchData();
+    const interval = setInterval(fetchData, 7000); // Refresh data every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div>
       <div className="water-level">
@@ -43,8 +59,8 @@ const Waterlevel: React.FC = () => {
             </defs>
 
             {/* X-Axis */}
-            <XAxis dataKey="name">
-              <Label value="Months" offset={-5} position="insideBottom" />
+            <XAxis dataKey="time">
+              <Label value="Time" offset={-5} position="insideBottom" />
             </XAxis>
 
             {/* Y-Axis */}
@@ -52,7 +68,10 @@ const Waterlevel: React.FC = () => {
 
             {/* Grid & Tooltip */}
             <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip />
+            <Tooltip
+              formatter={(value, name) => [`${value}`, name]}
+              labelFormatter={(label) => `${label}`}
+            />
 
             {/* Area Chart */}
             <Area

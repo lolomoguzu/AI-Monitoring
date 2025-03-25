@@ -1,9 +1,31 @@
 import { Gauge, gaugeClasses } from "@mui/x-charts/Gauge";
 import { ThermometerHalf } from "react-bootstrap-icons";
 import "../Design/SensorDesign/Temperature.css";
-let temperature_data: number = 35;
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Temperature: React.FC = () => {
+  const [Temperature, setTemperature] = useState(50); // Default value
+
+  useEffect(() => {
+    const fetchHumidity = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/temperature");
+        setTemperature(response.data.temperature); // Assuming API returns {"humidity": value}
+      } catch (error) {
+        console.error("Error fetching humidity:", error);
+      }
+    };
+
+    // Fetch data every 5 seconds
+    const interval = setInterval(fetchHumidity, 7000);
+
+    // Initial fetch
+    fetchHumidity();
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="temperature">
       <div className="text-center mt-4">
@@ -14,7 +36,7 @@ const Temperature: React.FC = () => {
           <Gauge
             width={220}
             height={140}
-            value={temperature_data}
+            value={Temperature}
             startAngle={-110}
             endAngle={110}
             innerRadius="75%"
