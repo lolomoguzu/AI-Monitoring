@@ -27,7 +27,7 @@ const Waterlevel: React.FC = () => {
           Water: response.data.Water,
         };
 
-        setData((prevData) => [...prevData.slice(-10), newData]);
+        setData((prevData) => [...prevData.slice(-20), newData]);
       } catch (error) {
         console.error("Error fetching water level data:", error);
       }
@@ -67,7 +67,7 @@ const Waterlevel: React.FC = () => {
             <YAxis />
 
             {/* Grid & Tooltip */}
-            <CartesianGrid strokeDasharray="3 3" />
+            <CartesianGrid strokeDasharray="1 4" />
             <Tooltip
               formatter={(value, name) => [`${value}`, name]}
               labelFormatter={(label) => `${label}`}

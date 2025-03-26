@@ -1,29 +1,41 @@
-import { gaugeClasses } from "@mui/x-charts/Gauge";
-import { Gauge } from "@mui/x-charts";
-import "../Design/SensorDesign/Humidity.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Gauge, gaugeClasses } from "@mui/x-charts";
+import "../Design/SensorDesign/Humidity.css";
 
 const HumiditySensor = () => {
-  const [humidity, setHumidity] = useState(50); // Default value
+  // 🌡 State variables
+  const [humidity, setHumidity] = useState(100); // Displayed value
+  const [targetHumidity, setTargetHumidity] = useState(100); // API value
 
+  // 🌍 Fetch Humidity Data
   useEffect(() => {
     const fetchHumidity = async () => {
       try {
         const response = await axios.get("http://127.0.0.1:8000/humidity");
-        setHumidity(response.data.humidity); // Assuming API returns {"humidity": value}
+        setTargetHumidity(response.data.humidity); // Store target value
       } catch (error) {
         console.error("Error fetching humidity:", error);
       }
     };
 
-    const interval = setInterval(fetchHumidity, 7000);
-
-    // Initial fetch
-    fetchHumidity();
+    fetchHumidity(); // Initial fetch
+    const interval = setInterval(fetchHumidity, 7000); // Refresh every 7 sec
 
     return () => clearInterval(interval);
   }, []);
+
+  // 🔄 Smooth Transition Effect
+  useEffect(() => {
+    const smoothUpdate = () => {
+      setHumidity((prev) => prev + (targetHumidity - prev) * 0.1); // Step towards target
+      if (Math.abs(humidity - targetHumidity) > 0.5) {
+        requestAnimationFrame(smoothUpdate);
+      }
+    };
+
+    smoothUpdate();
+  }, [targetHumidity]);
 
   return (
     <div className="soil-moisture">
@@ -40,6 +52,7 @@ const HumiditySensor = () => {
             innerRadius="75%"
             outerRadius="100%"
             cornerRadius={10}
+            text={({ value }) => `${Math.round(value ?? 0)}%`}
             sx={{
               [`& .${gaugeClasses.valueText}`]: {
                 fontSize: 30,
@@ -47,9 +60,9 @@ const HumiditySensor = () => {
               },
               [`& .${gaugeClasses.valueArc}`]: {
                 stroke: "#050505",
+                transition: "stroke 0.5s ease-in-out",
               },
             }}
-            text={({ value }) => `${value}%`}
           />
           <div className="text-buttom-soil">
             <span>1</span>
