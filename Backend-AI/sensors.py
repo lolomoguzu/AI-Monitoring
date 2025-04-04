@@ -14,8 +14,8 @@ def get_humidity():
     current_time = time.time()
     
     if current_time - last_updated > 5:
-        last_humidity = random.randint(1, 100)  # Generate a new value
-        last_updated = current_time  # Update timestamp
+        last_humidity = random.randint(1, 100)  
+        last_updated = current_time  
 
     return last_humidity
 

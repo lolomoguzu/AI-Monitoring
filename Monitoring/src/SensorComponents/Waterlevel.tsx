@@ -60,11 +60,13 @@ const Waterlevel: React.FC = () => {
 
             {/* X-Axis */}
             <XAxis dataKey="time">
-              <Label value="Time" offset={-5} position="insideBottom" />
+              <Label value="Time" offset={-5}  position="insideBottom" />
             </XAxis>
 
             {/* Y-Axis */}
-            <YAxis />
+            <YAxis
+              label={{ value: "Intensity", angle: -90, position: "insideLeft" }}
+            />
 
             {/* Grid & Tooltip */}
             <CartesianGrid strokeDasharray="1 4" />
